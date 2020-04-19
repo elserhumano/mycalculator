@@ -8,9 +8,11 @@ import (
 	"strings"
 )
 
-type calc struct{}
+// Calc define el struct a usar
+type Calc struct{}
 
-func (calc) operate(entrada string, operador string) int {
+// Operate opera en la calculadora
+func (Calc) Operate(entrada string, operador string) int {
 
 	entradaLimpia := strings.Split(entrada, operador)
 	operador1 := parsear(entradaLimpia[0])
@@ -44,6 +46,7 @@ func parsear(entrada string) int {
 	return operador
 }
 
+// LeerEntrada toma desde consola los valores
 func LeerEntrada() string {
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
